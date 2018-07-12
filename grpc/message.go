@@ -79,7 +79,35 @@ syntax = "proto3";
 
 package {{ .Package }};
 
-import public "github.com/getamis/sol2proto/pb/messages.proto";
+message Empty {
+}
+
+message address { bytes data = 1; }
+message uint8   { bytes data = 1; }
+message uint16  { bytes data = 1; }
+message uint128 { bytes data = 1; }
+message uint256 { bytes data = 1; }
+message int8    { bytes data = 1; }
+message int16   { bytes data = 1; }
+message int128  { bytes data = 1; }
+message int256  { bytes data = 1; }
+
+message TransactOpts {
+    string from_address = 1;
+    string private_key = 2;
+    int64 nonce = 3;
+    int64 value = 4;
+    int64 gas_price = 5;
+    int64 gas_limit = 6;
+}
+
+message TransactionReq {
+    TransactOpts opts = 1;
+}
+
+message TransactionResp {
+    string tx_hash = 1;
+}
 
 {{ range .Messages }}
 {{ . }}
