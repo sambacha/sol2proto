@@ -32,20 +32,32 @@ func toGrpcType(t abi.Type) string {
 	switch t.T {
 	case abi.IntTy:
 		if t.Size == 8 {
-			return "byte"
+			return "int8"
+		} else if t.Size == 16 {
+			return "int16"
 		} else if t.Size == 32 {
 			return "int32"
 		} else if t.Size == 64 {
 			return "int64"
+		} else if t.Size == 128 {
+			return "int128"
+		} else if t.Size == 256 {
+			return "int256"
 		}
 		return "bytes"
 	case abi.UintTy:
 		if t.Size == 8 {
-			return "byte"
+			return "uint8"
+		} else if t.Size == 16 {
+			return "uint16"
 		} else if t.Size == 32 {
 			return "uint32"
 		} else if t.Size == 64 {
 			return "uint64"
+		} else if t.Size == 128 {
+			return "uint128"
+		} else if t.Size == 256 {
+			return "uint256"
 		}
 		return "bytes"
 	case abi.BoolTy:
