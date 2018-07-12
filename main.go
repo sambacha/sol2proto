@@ -29,7 +29,7 @@ import (
 	"github.com/getamis/sirius/util"
 	flag "github.com/spf13/pflag"
 
-	"github.com/fansunite/sol2proto/grpc"
+	"github.com/FansUnite12/sol2proto/grpc"
 )
 
 var (
