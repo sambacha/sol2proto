@@ -21,7 +21,6 @@ import "github.com/ethereum/go-ethereum/accounts/abi"
 func ToGrpcArgument(in abi.Argument) Argument {
 	arg := Argument{
 		Name:    in.Name,
-		IsSlice: in.Type.IsSlice,
 	}
 
 	arg.Type = toGrpcType(in.Type)
