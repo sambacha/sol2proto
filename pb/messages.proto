@@ -19,6 +19,16 @@ package pb;
 message Empty {
 }
 
+message address { bytes data = 1; }
+message uint8   { bytes data = 1; }
+message uint16  { bytes data = 1; }
+message uint128 { bytes data = 1; }
+message uint256 { bytes data = 1; }
+message int8    { bytes data = 1; }
+message int16   { bytes data = 1; }
+message int128  { bytes data = 1; }
+message int256  { bytes data = 1; }
+
 message TransactOpts {
     string from_address = 1;
     string private_key = 2;
